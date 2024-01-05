@@ -32,9 +32,9 @@ The Stock Screener project aims to gather data from the NSE INDIA website for va
 
 
 3. **Run the Application:**
--->
-Visit `http://localhost:5000` in your browser to access the Stock Screener web application.
 
+Visit `http://localhost:5000` in your browser to access the Stock Screener web application.
+-->
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvement, please open an issue or submit a pull request.
