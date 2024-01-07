@@ -62,8 +62,8 @@ body {
     box-sizing: border-box;
   }
   
-  /* Styling for the submit button (you can add more styling as needed) */
-  input[type="submit"] {
+  /* Styling for the submit button */
+  button {
     background-color: #1e67c3;
     color: white;
     padding: 10px 15px;
@@ -73,7 +73,7 @@ body {
     transition: background-color 0.3s ease;
   }
   
-  input[type="submit"]:hover {
+  button:hover {
     background-color: #155296;
   }
   

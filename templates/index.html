@@ -18,8 +18,8 @@
     <p>We help in identifying different candle patterns formed in a daily chart for different stocks. These candle patterns can act as a trading signal and help one to take a trade at this point. Please go through the below options to see the candle patterns formed for the last trading day.</p>
   </section>
 
-  <!-- Section 2: Choosing Options -->
-  <section id="choosing-options">
+<!-- Section 2: Choosing Options -->
+<section id="choosing-options">
     <h2>Choose Candle Pattern:</h2>
     <form>
       <label for="candlePattern">Select Candle Pattern:</label>
@@ -28,16 +28,17 @@
         <option value="bullishHammer">Bullish Hammer</option>
         <!-- Add more candle pattern options as needed -->
       </select>
-    </form>
-
-    <h2>Choose Sector:</h2>
-    <form>
+  
+      <h2>Choose Sector:</h2>
       <label for="sector">Select Sector:</label>
       <select id="sector" name="sector">
         <option value="nifty50">NIFTY50</option>
         <option value="nifty100">NIFTY100</option>
         <!-- Add more sector options as needed -->
       </select>
+  
+      <!-- Add a styled button to trigger the JavaScript function -->
+      <button type="button" onclick="processSelection()" class="styled-button">Process Selection</button>
     </form>
   </section>
 
