@@ -21,7 +21,8 @@ class Stocks:
               'DRREDDY','CANBK','TECHM','POWERGRID','NTPC','COALINDIA','INFY','ONGC','MUTHOOTFIN','SBIN','IOC','BPCL']
         
         elif self.sector == 'Ind':
-            return ["INFY","TCS"]
+            return ['TATACONSUM','MOTHERSON','TATAMOTORS','GAIL','ADANIGREEN','DABUR','TATAMTRDVR','IRCTC','TORNTPHARM',
+              'MCDOWELL-N','ADANIENSOL','CHOLAFIN','BAJAJ-AUTO','NESTLEIND','GODREJCP','JINDALSTEL','PGHH','SIEMENS','BERGEPAINT']
         
     def getQuotes(self):
         return self.quotes

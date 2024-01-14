@@ -24,7 +24,7 @@
     <form>
       <label for="candlePattern">Select Candle Pattern:</label>
       <select id="candlePattern" name="candlePattern">
-        <option value="bullishEngulfing">Bullish Engulfing</option>
+        <!-- <option value="bullishEngulfing">Bullish Engulfing</option> -->
         <option value="bullishHammer">Bullish Hammer</option>
         <!-- Add more candle pattern options as needed -->
       </select>
@@ -32,8 +32,9 @@
       <h2>Choose Sector:</h2>
       <label for="sector">Select Sector:</label>
       <select id="sector" name="sector">
-        <option value="nifty50">NIFTY50</option>
-        <option value="nifty100">NIFTY100</option>
+        <!-- <option value="nifty50">NIFTY50</option> -->
+        <!-- <option value="nifty100">NIFTY100</option> -->
+        <option value="Ind">Ind</option>
         <!-- Add more sector options as needed -->
       </select>
   
@@ -45,7 +46,42 @@
   <!-- Section 3: Showing Results -->
   <section id="showing-results">
     <!-- You can add content to display results here -->
+    <div class="spinner-container" id="spinnerContainer">
+      <div class="spinner"></div>
+  </div>
   </section>
+
+
+  <section id="candlestick-patterns">
+    <h1>Candlestick Patterns</h1>
+
+    <div class="pattern">
+        <h2>Doji</h2>
+        <img src="{{ url_for('static', filename='img/doji_pattern_image.png') }}" alt="Doji Candlestick Pattern">
+        <p>A Doji is a candlestick pattern where the open and close prices are nearly equal. It signals market indecision and potential reversal.</p>
+    </div>
+
+    <div class="pattern">
+        <h2>Hammer</h2>
+        
+        <p>The Hammer is a candlestick pattern with a small body at the top and a long lower shadow. It suggests a potential reversal.</p>
+        <img src="{{ url_for('static', filename='img/hammer_pattern_image1.png') }}" alt="Hammer Candlestick Pattern">
+        <p><strong>Bullish Hammer:</strong> The Bullish Hammer occurs at the bottom of a downtrend and signals a potential bullish reversal.</p>
+        <img src="{{ url_for('static', filename='img/hammer_pattern_image2.png') }}" alt="Inverted Hammer Candlestick Pattern">
+        <p><strong>Bearish Hammer:</strong> The Bearish Hammer occurs at the top of an uptrend and signals a potential bearish reversal.</p>
+    </div>
+
+    <div class="pattern">
+        <h2>Engulfing</h2>
+        <img src="{{ url_for('static', filename='img/engulfing_pattern_image.png') }}" alt="Engulfing Candlestick Pattern">
+        <p>The Engulfing pattern occurs when a larger candlestick completely engulfs the previous one. It signals a potential trend reversal.</p>
+        <p><strong>Bullish Engulfing:</strong> A bullish reversal pattern where a small bearish candle is followed by a larger bullish candle.</p>
+        <p><strong>Bearish Engulfing:</strong> A bearish reversal pattern where a small bullish candle is followed by a larger bearish candle.</p>
+    </div>
+
+    <!-- Add more candlestick patterns as needed -->
+</section>
+
 
 
     <!-- Section 4: Footer -->

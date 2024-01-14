@@ -1,8 +1,19 @@
 // main.js
 function processSelection() {
+
+
+
+
     // Get the selected values
     var selectedCandlePattern = document.getElementById('candlePattern').value;
     var selectedSector = document.getElementById('sector').value;
+
+    var showingResults = document.getElementById('showing-results');
+
+    showingResults.style.display = 'block';
+
+    var spinnerContainer = document.getElementById('spinnerContainer');
+    spinnerContainer.style.display = 'block';
   
     // Example: Log the selected values (you can replace this with your desired logic)
     console.log('Selected Candle Pattern:', selectedCandlePattern);
@@ -23,7 +34,20 @@ function processSelection() {
     .then(response => response.json())
     .then(data => {
         // Process the result from Python
-       document.getElementById('showing-results').innerHTML = "<p>" + data.result + "</p>";
+
+        spinnerContainer.style.display = 'none';
+
+       var resultHtml = '<ul>';
+
+       // Iterate through the list and create list items
+       data.result.forEach(item => {
+           resultHtml += '<li>' + item + '</li>';
+       });
+
+       resultHtml += '</ul>';
+
+       // Update the content of the showing-results section
+       document.getElementById('showing-results').innerHTML += resultHtml;
 
     })
     .catch(error => {
@@ -32,9 +56,6 @@ function processSelection() {
     
     
     
-    //displayResult(selectedCandlePattern,selectedSector)
-    // Call additional functions or perform actions based on the selected values
-    // ...
   }
   
 
