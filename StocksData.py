@@ -74,6 +74,26 @@ def screenCandle(webData,selectedCandlePattern):
 
             if (bodyRange * 4 <= totalRange) and (closePrice >= levelPrice)  and (openPrice >= levelPrice):
                 result.append(quote)
+
+    elif selectedCandlePattern == 'bullishEngulfing':
+        for quote in data.keys():
+            requiredData = data[quote].tail(2)
+            lastDayData = requiredData.iloc[1]
+            openPrice, closePrice, dayHigh, dayLow = lastDayData['OPEN PRICE'], lastDayData['CLOSE PRICE'], lastDayData['DAY HIGH'], lastDayData['DAY LOW']
+            bodyHigh = max(openPrice,closePrice)
+            bodyLow = min(openPrice,closePrice)
+
+            
+            last2ndData = requiredData.iloc[0]
+            openPrice2, closePrice2, dayHigh2, dayLow2 = last2ndData['OPEN PRICE'], last2ndData['CLOSE PRICE'], last2ndData['DAY HIGH'], last2ndData['DAY LOW']
+            bodyHigh2 = max(openPrice2,closePrice2)
+            bodyLow2 = min(openPrice2,closePrice2)
+
+            if bodyLow < bodyLow2 and bodyHigh > bodyHigh2 and dayHigh > dayHigh2 and dayLow < dayLow2:
+                if openPrice < closePrice:
+                    result.append(quote)
+
+
             
     print(result)
 
