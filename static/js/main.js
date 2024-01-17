@@ -1,19 +1,23 @@
 // main.js
+
 function processSelection() {
-
-
 
 
     // Get the selected values
     var selectedCandlePattern = document.getElementById('candlePattern').value;
     var selectedSector = document.getElementById('sector').value;
 
-    var showingResults = document.getElementById('showing-results');
-
+    
+    // displaying off and on the required elements
+    var showingResults = document.getElementById('showing-results');   
     showingResults.style.display = 'block';
-
+    
     var spinnerContainer = document.getElementById('spinnerContainer');
     spinnerContainer.style.display = 'block';
+
+    var results = document.getElementById("results");
+
+    
   
     // Example: Log the selected values (you can replace this with your desired logic)
     console.log('Selected Candle Pattern:', selectedCandlePattern);
@@ -45,9 +49,11 @@ function processSelection() {
        });
 
        resultHtml += '</ul>';
-
+       console.log(resultHtml);
+       results.innerHTML = resultHtml;
        // Update the content of the showing-results section
-       document.getElementById('showing-results').innerHTML += resultHtml;
+
+
 
     })
     .catch(error => {
@@ -58,11 +64,3 @@ function processSelection() {
     
   }
   
-
-
-  function displayResult(selectedCandlePattern,selectedSector){
-
-    var resultContainer = document.getElementById('showing-results')
-    resultContainer.innerHTML = `<h2> ${selectedCandlePattern} ${selectedSector} <h2>`
-
-  }
